@@ -40,6 +40,8 @@ events = response[:results].map { |event|
   }
 }
 
+alpha = ('a'..'z').to_a
+
 events.map { |event|
   sleep 5
   puts "Getting RSVPs for #{event[:name]}"
@@ -49,15 +51,23 @@ events.map { |event|
       { name: "Not Available", id: -1 }
     }
     photo = rsvp.fetch(:member_photo) {
-      { highres_link: "Not Available" }
+      {
+        highres_link: "Not Available",
+        thumb_link: "Not Available",
+        photo_link: "Not Available"
+      }
     }
     {
       response: rsvp[:response],
       name: member[:name],
       member_id: member[:member_id],
-      member_photo: photo[:highres_link]
+      highres_photo: photo[:highres_link],
+      thumb_photo: photo[:thumb_link],
+      photo_link: photo[:photo_link],
+      key: member[:member_id].to_s.split('').map { |c| alpha[c.to_i] }.join
     }
   }
+  rsvps.sort! { |a, b| a[:name] <=> b[:name] }
   event.tap { |event| event[:rsvps] = rsvps }
 }
 

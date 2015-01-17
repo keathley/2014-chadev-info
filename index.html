@@ -50,6 +50,11 @@
         top: 100%;
         left: 0;
       }
+
+      .chart rect.highlight {
+        transition: fill .2s ease;
+        fill: orange;
+      }
     </style>
   </head>
   <body>
@@ -58,54 +63,72 @@
       </svg>
     </section>
     <script>
-      var width     = 1480,
-          height    = 800,
-          barWidth  = 12,
-          barHeight = 12;
+      (function() {
+        var width     = 1480,
+            height    = 900,
+            barWidth  = 18,
+            barHeight = 15,
+            spacer    = 2;
 
-      var tip = d3.tip()
-        .attr('class', 'data-tip')
-        .offset([-10, 0])
-        .html(function(d) {
-          return "<strong>" + d.name + "</strong>";
+        var tip = d3.tip()
+          .attr('class', 'data-tip')
+          .offset([-10, 0])
+          .html(function(d) {
+            var tag = "<strong>" + d.name + "</strong>";
+            if (d.thumb_photo)
+              tag += imgTag(d.thumb_photo);
+
+            return tag;
+
+            function imgTag(url) {
+              return "<img src="+url+">"
+            }
+          });
+
+        var chart = d3.select(".chart")
+          .attr("width", width)
+          .attr("height", height);
+
+        chart.call(tip);
+
+        d3.json("events.json", function(error, json) {
+          if (error) return console.warn(error);
+          var events = json;
+
+          var y = d3.scale.linear()
+            .domain([0, d3.max(events, function(event) {
+              return event.rsvps.length;
+            })])
+            .range([height, 0]);
+
+          var columns = chart.selectAll('g')
+              .data(events)
+            .enter().append('g')
+              .attr('transform', function(d, i) {
+                return "translate(" + i * barWidth + ",0)";
+              });
+
+          var rsvps = columns.selectAll('rect')
+              .data(function(d) { return d.rsvps; })
+            .enter().append('rect')
+              .attr('data-key', function(d) { return d.key; })
+              .attr('width', barWidth - spacer)
+              .attr('y', function(d, i) { return y(i); })
+              .attr('height', barHeight - spacer)
+            .on('mouseover', function(d) {
+              tip.show(d);
+              d3.selectAll(selector(d)).attr('class', 'highlight');
+            })
+            .on('mouseout', function(d) {
+              tip.hide(d);
+              d3.selectAll(selector(d)).attr('class', '');
+            });
         });
 
-      var chart = d3.select(".chart")
-        .attr("width", width)
-        .attr("height", height);
-
-      chart.call(tip);
-
-      d3.json("events.json", function(error, json) {
-        if (error) return console.warn(error);
-        var events = json;
-
-        var y = d3.scale.linear()
-          .domain([0, d3.max(events, function(event) {
-            return event.rsvps.length;
-          })])
-          .range([height, 0]);
-
-
-        var columns = chart.selectAll('g')
-            .data(events)
-          .enter().append('g')
-            .attr('transform', function(d, i) {
-              return "translate(" + i * barWidth + ",0)";
-            });
-
-        var rsvps = columns.selectAll('rect')
-            .data(function(d) { return d.rsvps; })
-          .enter().append('rect')
-            .attr('width', barWidth - 2)
-            .attr('y', function(d, i) { return y(i); })
-            .attr('height', barHeight - 2)
-          .on('mouseover', function(d) {
-            console.log("Hoverin");
-            tip.show(d);
-          })
-          .on('mouseout', tip.hide);
-      });
+        function selector(member) {
+          return '[data-key=' + member.key + ']';
+        }
+      })();
     </script>
   </body>
 </html>
