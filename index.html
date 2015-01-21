@@ -5,57 +5,7 @@
     <script src="events.json"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.js"></script>
     <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
-    <style>
-      .chart rect {
-        fill: steelblue;
-      }
-
-      .chart text {
-        fill: white;
-        font: 10px sans-serif;
-        text-anchor: end;
-      }
-
-      .chart-information {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .data-tip {
-        line-height: 1;
-        font-weight: bold;
-        padding: 12px;
-        background: rgba(0, 0, 0, 0.8);
-        color: #fff;
-        border-radius: 2px;
-      }
-
-      /* Creates a small triangle extender for the tooltip */
-      .data-tip:after {
-        box-sizing: border-box;
-        display: inline;
-        font-size: 10px;
-        width: 100%;
-        line-height: 1;
-        color: rgba(0, 0, 0, 0.8);
-        content: "\25BC";
-        position: absolute;
-        text-align: center;
-      }
-
-      /* Style northward tooltips differently */
-      .data-tip.n:after {
-        margin: -1px 0 0 0;
-        top: 100%;
-        left: 0;
-      }
-
-      .chart rect.highlight {
-        transition: fill .2s ease;
-        fill: orange;
-      }
-    </style>
+    <link rel="stylesheet" href="/assets/css/global.css"/>
   </head>
   <body>
     <section class="chart-information">
@@ -64,7 +14,7 @@
     </section>
     <script>
       (function() {
-        var width     = 1480,
+        var width     = 940,
             height    = 900,
             barWidth  = 18,
             barHeight = 15,
@@ -74,7 +24,7 @@
           .attr('class', 'data-tip')
           .offset([-10, 0])
           .html(function(d) {
-            var tag = "<strong>" + d.name + "</strong>";
+            var tag = "<p>" + d.name + "</p>";
             if (d.thumb_photo)
               tag += imgTag(d.thumb_photo);
 

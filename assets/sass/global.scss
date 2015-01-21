@@ -1,0 +1,77 @@
+@import "fonts";
+
+// Colors
+$blue: #15a8db;
+$orange: #fabe28;
+
+body {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  margin: 0;
+}
+
+.chart {
+  margin-top: 150px;
+
+  rect {
+    fill: $blue;
+  }
+
+  rect.highlight {
+    fill: $orange;
+    transition: fill .2s ease-in-out;
+  }
+
+}
+
+.chart-information {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.data-tip {
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 2px;
+  transition: opacity .2s ease;
+
+  // Creates a small triangle extender for the tooltip
+  &:after {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 12px;
+    width: 100%;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.8);
+    content: "\25BC";
+    position: absolute;
+    text-align: center;
+  }
+
+  // Style northward tooltips differently
+  &.n:after {
+    margin: -2px 0 0 0;
+    top: 100%;
+    left: 0;
+  }
+
+  p {
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 1;
+    color: white;
+    margin: 0 0 .75em 0;
+  }
+
+  img {
+    display: block;
+    margin: auto;
+
+    // Hides "Not available" profile photos
+    &[src="Not"] {
+      display: none;
+    }
+
+  }
+
+}
