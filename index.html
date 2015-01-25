@@ -9,12 +9,18 @@
       body {
         background: #19063A;
         font-family: 'Lucida Grande';
+        margin: 0;
+        padding: 0;
       }
 
       header {
         color: white;
         text-align: center;
         padding: 200px 20px 110px;
+        background: url('/assets/header-large.jpg') 40% 50% no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        /*-webkit-filter: blur(1px) brightness(1) contrast(.96) grayscale(1);*/
       }
 
       header h1 {
@@ -28,10 +34,16 @@
 
       .chart rect {
         fill: steelblue;
+        cursor: pointer;
+      }
+
+      .chart.locked rect {
+        transition: fill .1s;
+        fill: #172457;
       }
 
       .chart .highlight rect {
-        transition: fill .3s;
+        transition: fill .1s;
         fill: orange;
       }
 
@@ -39,6 +51,15 @@
         fill: white;
         font: 10px sans-serif;
         text-anchor: end;
+      }
+
+      .chart.locked text.x.axis {
+        transition: .1s;
+        fill: #4F4F4F;
+      }
+
+      .chart .highlight text.x.axis {
+        fill: white;
       }
 
       .chart-information {
@@ -54,14 +75,16 @@
         shape-rendering: crispEdges;
       }
 
-      .x.axis path {
+      .x.axis path,
+      .y.axis path
+      {
         display: none;
       }
 
       .data-tip {
         line-height: 1;
         font-weight: lighter;
-        font-size: 14px;
+        font-size: 12px;
         padding: 12px;
         background: rgba(0, 0, 0, 0.8);
         color: #fff;
@@ -85,8 +108,6 @@
         top: 100%;
         left: 0;
       }
-
-
     </style>
   </head>
   <body>
@@ -107,7 +128,8 @@
             barWidth    = 18,
             spacer      =  1,
             chartWidth  = 1200,
-            chartHeight = 800;
+            chartHeight = 800,
+            isHighlightLocked = false;
 
         d3.json("events.json", function(error, json) {
           if (error) return console.warn(error);
@@ -136,22 +158,24 @@
             .orient('left');
 
           chart.append('g')
-            .attr('class', 'x axis')
-            .attr('transform', 'translate(0,' + (chartHeight + 30) + ')')
-            .call(xAxis)
-            .selectAll('text')
-              .style('text-anchor', 'end')
-              .attr('dx', '-1.8em')
-              .attr('dy', '.15em')
-              .attr('transform', function(d) { return 'rotate(-65)'; });
+            .attr('class', 'y axis')
+            .call(yAxis);
 
           var columns = chart.selectAll('.meetup')
               .data(events)
             .enter().append('g')
               .attr('class', 'g')
               .attr('transform', function(d) {
-                return "translate(" + xScale(d.name) + "," + barHeight + ")";
+                return "translate(" + xScale(d.name) + "," + (-barHeight) + ")";
               });
+
+          columns.append('text')
+            .attr('transform', 'translate(' + (barWidth) + ', ' + (chartHeight + 15) + ') rotate(-65)' )
+            .attr('class', 'x axis')
+            .attr('text-anchor', 'end')
+            .attr('dx', '-10px')
+            .attr('dy', '.15em')
+            .text(function(d) { return d.name; });
 
           var rsvps = columns.selectAll('rect')
               .data(function(d) { return d.rsvps; })
@@ -162,6 +186,8 @@
               .attr('height', barHeight - spacer)
             .on('mouseover', function(d) {
               tip.show(d);
+              if (isHighlightLocked) return;
+
               var cells = document.querySelectorAll(selector(d));
               [].forEach.call(cells, function(cell) {
                 cell.parentNode.classList.add('highlight');
@@ -169,10 +195,16 @@
             })
             .on('mouseout', function(d) {
               tip.hide(d);
+              if (isHighlightLocked) return;
+
               var highlights = document.querySelectorAll('.highlight');
               [].forEach.call(highlights, function(column) {
                 column.classList.remove('highlight');
               });
+            })
+            .on('click', function(d) {
+              isHighlightLocked = !isHighlightLocked;
+              document.querySelector('.chart').classList.toggle('locked');
             });
 
 
