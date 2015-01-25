@@ -17,10 +17,6 @@
         color: white;
         text-align: center;
         padding: 200px 20px 110px;
-        background: url('/assets/header-large.jpg') 40% 50% no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
-        /*-webkit-filter: blur(1px) brightness(1) contrast(.96) grayscale(1);*/
       }
 
       header h1 {
@@ -120,7 +116,6 @@
     </section>
     <script>
       (function() {
-
         var margin      = { top: 0, right: 20, bottom: 30, left: 30 },
             width       = 1200,
             height      = 1200,
@@ -206,7 +201,6 @@
               isHighlightLocked = !isHighlightLocked;
               document.querySelector('.chart').classList.toggle('locked');
             });
-
 
           var tip = d3.tip()
             .attr('class', 'data-tip')
