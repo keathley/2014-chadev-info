@@ -8,10 +8,31 @@
     <style>
       body {
         background: #19063A;
+        font-family: 'Lucida Grande';
+      }
+
+      header {
+        color: white;
+        text-align: center;
+        padding: 200px 20px 110px;
+      }
+
+      header h1 {
+        font-weight: lighter;
+        font-size: 60px;
+      }
+
+      .chart {
+        padding: 20px;
       }
 
       .chart rect {
         fill: steelblue;
+      }
+
+      .chart .highlight rect {
+        transition: fill .3s;
+        fill: orange;
       }
 
       .chart text {
@@ -26,9 +47,21 @@
         justify-content: center;
       }
 
+      .axis path,
+      .axis line {
+        fill: none;
+        stroke: white;
+        shape-rendering: crispEdges;
+      }
+
+      .x.axis path {
+        display: none;
+      }
+
       .data-tip {
         line-height: 1;
-        font-weight: bold;
+        font-weight: lighter;
+        font-size: 14px;
         padding: 12px;
         background: rgba(0, 0, 0, 0.8);
         color: #fff;
@@ -53,101 +86,105 @@
         left: 0;
       }
 
-      .chart .highlight rect {
-        transition: fill .4s ease;
-        fill: orange;
-      }
+
     </style>
   </head>
   <body>
     <header>
-      <h1>Lunch stats</h1>
+      <h1>Chadev+Lunch 2014</h1>
     </header>
     <section class="chart-information">
-      <svg class="chart" height="800" width="1000">
+      <svg class="chart">
       </svg>
     </section>
     <script>
       (function() {
-        var chart = d3.select(".chart");
 
-        var margin    = { top: 0, right: 10, bottom: 30, left: 10 },
-            width     = getChartWidth(),
-            height    = getChartHeight(),
-            barHeight = 12,
-            barWidth  = 18,
-            spacer    =  2;
-
-        var tip = d3.tip()
-          .attr('class', 'data-tip')
-          .offset([-10, 0])
-          .html(function(d) {
-            var tag = "<strong>" + d.name + "</strong>";
-            return tag;
-          });
-
-        chart.call(tip);
+        var margin      = { top: 0, right: 20, bottom: 30, left: 30 },
+            width       = 1200,
+            height      = 1200,
+            barHeight   = 12,
+            barWidth    = 18,
+            spacer      =  1,
+            chartWidth  = 1200,
+            chartHeight = 800;
 
         d3.json("events.json", function(error, json) {
           if (error) return console.warn(error);
           var events = json;
 
-          chart.attr('width', width).attr('height', height);
+          var chart = d3.select(".chart")
+              .attr('width', width + margin.left + margin.right)
+              .attr('height', height + margin.top + margin.bottom)
+            .append('g')
+              .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
-          var xScale = d3.scale.ordinal();
+          var xScale = d3.scale.ordinal()
+            .domain(events.map(function(d) { return d.name; }))
+            .rangeRoundBands([0, chartWidth], 0.1);
+
           var yScale = d3.scale.linear()
-            .domain([0, d3.max(events, function(event) {
-              return event.rsvps.length;
-            })])
-            .range([height, 0]);
+            .domain([0, d3.max(events, function(d) { return d.rsvps.length; })])
+            .range([chartHeight, 0]);
 
           var xAxis = d3.svg.axis()
-            .scale(xScale);
+            .scale(xScale)
+            .orient('bottom');
 
           var yAxis = d3.svg.axis()
-            .scale(yScale);
+            .scale(yScale)
+            .orient('left');
 
-          // d3.select(window).on('resize', resize);
+          chart.append('g')
+            .attr('class', 'x axis')
+            .attr('transform', 'translate(0,' + (chartHeight + 30) + ')')
+            .call(xAxis)
+            .selectAll('text')
+              .style('text-anchor', 'end')
+              .attr('dx', '-1.8em')
+              .attr('dy', '.15em')
+              .attr('transform', function(d) { return 'rotate(-65)'; });
 
-          drawChart();
-
-          function drawChart() {
-            var columns = chart.selectAll('g')
-                .data(events)
-              .enter().append('g')
-                .attr('transform', function(d, i) {
-                  return "translate(" + i * barWidth + ",0)";
-                });
-
-            var rsvps = columns.selectAll('rect')
-                .data(function(d) { return d.rsvps; })
-              .enter().append('rect')
-                .attr('data-key', function(d) { return d.key; })
-                .attr('width', barWidth - spacer)
-                .attr('y', function(d, i) { return yScale(i); })
-                .attr('height', barHeight - spacer)
-              .on('mouseover', function(d) {
-                tip.show(d);
-                var cells = document.querySelectorAll(selector(d));
-                [].forEach.call(cells, function(cell) {
-                  console.log(cell.parentNode);
-                  cell.parentNode.classList.add('highlight');
-                });
-              })
-              .on('mouseout', function(d) {
-                tip.hide(d);
-                var highlights = document.querySelectorAll('.highlight');
-                [].forEach.call(highlights, function(column) {
-                  column.classList.remove('highlight');
-                });
+          var columns = chart.selectAll('.meetup')
+              .data(events)
+            .enter().append('g')
+              .attr('class', 'g')
+              .attr('transform', function(d) {
+                return "translate(" + xScale(d.name) + "," + barHeight + ")";
               });
-          }
 
-          // function resize() {
-          //   var height = getChartHeigh();
+          var rsvps = columns.selectAll('rect')
+              .data(function(d) { return d.rsvps; })
+            .enter().append('rect')
+              .attr('data-key', function(d) { return d.key; })
+              .attr('width', xScale.rangeBand())
+              .attr('y', function(d, i) { return yScale(i); })
+              .attr('height', barHeight - spacer)
+            .on('mouseover', function(d) {
+              tip.show(d);
+              var cells = document.querySelectorAll(selector(d));
+              [].forEach.call(cells, function(cell) {
+                cell.parentNode.classList.add('highlight');
+              });
+            })
+            .on('mouseout', function(d) {
+              tip.hide(d);
+              var highlights = document.querySelectorAll('.highlight');
+              [].forEach.call(highlights, function(column) {
+                column.classList.remove('highlight');
+              });
+            });
 
-          //   yScale.range([height, 0]);
-          // }
+
+          var tip = d3.tip()
+            .attr('class', 'data-tip')
+            .offset([-10, 0])
+            .html(function(d) {
+              var tag = "<span>" + d.name + "</span>";
+              return tag;
+            });
+
+          chart.call(tip);
         });
 
         function selector(member) {
