@@ -606,7 +606,7 @@
   },
   {
     "id": "156281582",
-    "name": "EMCAScript 6 and the future of Javascript w/ Jeffery McRiffey",
+    "name": "EMCAScript 6 and the future of Javascript",
     "time": 1389891600000,
     "timezone": null,
     "description": null,
@@ -835,7 +835,7 @@
   },
   {
     "id": "160308302",
-    "name": "Human First Web Design w/ Daniel Ryan",
+    "name": "Human First Web Design",
     "time": 1390496400000,
     "timezone": null,
     "description": null,
@@ -1100,7 +1100,7 @@
   },
   {
     "id": "160308982",
-    "name": "Using IPython Notebook to analyze Django model Data w/ Adam Haney",
+    "name": "Using IPython Notebook to analyze Django model Data",
     "time": 1391101200000,
     "timezone": null,
     "description": null,
@@ -1311,7 +1311,7 @@
   },
   {
     "id": "160310952",
-    "name": "An introduction to grails w/ Jared Menard",
+    "name": "An introduction to grails",
     "time": 1391706000000,
     "timezone": null,
     "description": null,
@@ -1603,7 +1603,7 @@
   },
   {
     "id": "160329202",
-    "name": "Unity 3D w/ Rodger Maarfi",
+    "name": "Unity 3D",
     "time": 1392915600000,
     "timezone": null,
     "description": null,
@@ -1904,7 +1904,7 @@
   },
   {
     "id": "160548412",
-    "name": "An Introduction to Cryptography for Programmers w/ Micah Hausler",
+    "name": "An Introduction to Cryptography for Programmers",
     "time": 1393520400000,
     "timezone": null,
     "description": null,
@@ -2169,7 +2169,7 @@
   },
   {
     "id": "166746152",
-    "name": "Refactoring legacy code bases for fun and profit w/ Chris Keathley",
+    "name": "Refactoring legacy code bases for fun and profit",
     "time": 1394125200000,
     "timezone": null,
     "description": null,
@@ -2425,7 +2425,7 @@
   },
   {
     "id": "168284402",
-    "name": "Intro to Augmented Reality using the Metaio SDK, with Reed \"Wreck It\" Tomlinson",
+    "name": "Intro to Augmented Reality using the Metaio SDK",
     "time": 1394726400000,
     "timezone": null,
     "description": null,
@@ -2618,7 +2618,7 @@
   },
   {
     "id": "168935792",
-    "name": "Handling Time Zones and Recurrences like a Boss in Python/Django w/ Wes Kendall",
+    "name": "Handling Time Zones and Recurrences like a Boss in Python/Django",
     "time": 1395936000000,
     "timezone": null,
     "description": "<p>Doing datetime manipulation in Python can be a very tedious task, especially across different time zones and daylight savings time boundaries. This talk summarizes a new open-source library called \"Fleming\" that aids in doing datetime manipulation across timezones. It also talks about \"Django Localized Recurrence\", another new open-source library for scheduling recurrences of events based on a time zone. The talk also gives a basic introduction to pytz in Python and some of the ways that Django handles time zones.</p>",
@@ -2883,7 +2883,7 @@
   },
   {
     "id": "171098562",
-    "name": "How economics effects developers w/ Rodger Maarfi",
+    "name": "How economics effects developers",
     "time": 1396540800000,
     "timezone": null,
     "description": null,
@@ -3202,7 +3202,7 @@
   },
   {
     "id": "174448232",
-    "name": "An Introduction to Adaptive Design w/ Aaron Gustafson",
+    "name": "An Introduction to Adaptive Design",
     "time": 1397145600000,
     "timezone": null,
     "description": "<p>For years, designers and developers have griped about the difficulties they encountered in supporting the numerous desktop browsers out there, but mobile is even more fragmented. Phones, tablets, media players, video game systems—each device (and in some cases each browser on each device) has its own dimensions, quirks and capabilities. It can make your brain hurt just thinking about it.</p> <p>Thankfully, going mobile doesn’t have to be a painful experience. In this session, Aaron Gustafson will introduce you to the concept of progressive enhancement and demonstrate why it is the way forward for web design, especially on mobile devices. In the course of his talk, he’ll walk you through progressive enhancement’s layered approach and show you how the latest techniques—mobile first, responsive design, and adaptive UI—fit in to the process.</p>",
@@ -3611,7 +3611,7 @@
   },
   {
     "id": "174364162",
-    "name": "Continuous Integration and Deployment @Bellhops w/ Adam Haney",
+    "name": "Continuous Integration and Deployment @Bellhops",
     "time": 1397750400000,
     "timezone": null,
     "description": "<p>Several developers have asked about tools and process for bringing continuous integration into their organization. I'd love to give an overview of how Bellhops does continuous integration and deployment and also highlight tools that are available.</p>",
@@ -3939,7 +3939,7 @@
   },
   {
     "id": "177915942",
-    "name": "Writing fast unit tests w/ Chris Keathley",
+    "name": "Writing fast unit tests",
     "time": 1398355200000,
     "timezone": null,
     "description": null,
@@ -4231,7 +4231,7 @@
   },
   {
     "id": "178099942",
-    "name": "Concurrency in Go w/ Adam Jimerson",
+    "name": "Concurrency in Go",
     "time": 1398960000000,
     "timezone": null,
     "description": null,
@@ -4505,7 +4505,7 @@
   },
   {
     "id": "180936902",
-    "name": "Olfactory Refactoring part 1 w/ Anthony Blardo",
+    "name": "Olfactory Refactoring part 1",
     "time": 1399564800000,
     "timezone": null,
     "description": null,
@@ -4743,7 +4743,7 @@
   },
   {
     "id": "181941082",
-    "name": "Olfactory Refactoring part 2 w/ Anthony Blardo",
+    "name": "Olfactory Refactoring part 2",
     "time": 1400169600000,
     "timezone": null,
     "description": null,
@@ -5017,7 +5017,7 @@
   },
   {
     "id": "181222122",
-    "name": "An Introduction to Angular.js w/ Chris Keathley",
+    "name": "An Introduction to Angular.js",
     "time": 1400774400000,
     "timezone": null,
     "description": null,
@@ -5255,7 +5255,7 @@
   },
   {
     "id": "180937162",
-    "name": ".NET trolling - why Microsoft is worth looking at w/ Rodger Maarfi",
+    "name": ".NET trolling - why Microsoft is worth looking at",
     "time": 1401379200000,
     "timezone": null,
     "description": "<p>We're looking to fill the hour with 5-10 minute talks about a subject you're interested in. Are you learning a new language, library, framework or technique? Tell us about it!</p>",
@@ -5475,7 +5475,7 @@
   },
   {
     "id": "186906542",
-    "name": "Open Source Map Making w/ Jason Denizac",
+    "name": "Open Source Map Making",
     "time": 1401984000000,
     "timezone": null,
     "description": null,
@@ -6495,7 +6495,7 @@
   },
   {
     "id": "187075852",
-    "name": "Activism, Hacking and the Chinese web w/ Brett Wise",
+    "name": "Activism, Hacking and the Chinese web",
     "time": 1403798400000,
     "timezone": null,
     "description": null,
@@ -6778,7 +6778,7 @@
   },
   {
     "id": "188124092",
-    "name": "An introduction to meteor.js w/ Andrew McPherson ",
+    "name": "An introduction to meteor.js",
     "time": 1404403200000,
     "timezone": null,
     "description": null,
@@ -7187,7 +7187,7 @@
   },
   {
     "id": "187076242",
-    "name": "Open Data: What is it anyway? w/ Sean Brewer",
+    "name": "Open Data: What is it anyway?",
     "time": 1405008000000,
     "timezone": null,
     "description": "<p>The City of Chattanooga recently proposed an open data initiative. I will explain open data and how you can participate in the open data movement.</p>",
@@ -7605,7 +7605,7 @@
   },
   {
     "id": "188127662",
-    "name": "An introduction to static analysis w/ Adam Haney",
+    "name": "An introduction to static analysis",
     "time": 1405612800000,
     "timezone": null,
     "description": null,
@@ -7942,7 +7942,7 @@
   },
   {
     "id": "188552482",
-    "name": "Photoshop for developers w/ Rodger Maarfi",
+    "name": "Photoshop for developers",
     "time": 1406217600000,
     "timezone": null,
     "description": null,
@@ -8243,7 +8243,7 @@
   },
   {
     "id": "197522782",
-    "name": "Set up an immutable server in 10 minutes using Ansible w/ Ryan Lelek",
+    "name": "Set up an immutable server in 10 minutes using Ansible",
     "time": 1406822400000,
     "timezone": null,
     "description": null,
@@ -8562,7 +8562,7 @@
   },
   {
     "id": "197747842",
-    "name": "From Queues to Caches: Redis Design patterns w/ Chris Keathley",
+    "name": "From Queues to Caches: Redis Design patterns",
     "time": 1407427200000,
     "timezone": null,
     "description": "<p>Redis is a key value store that I've used in a lot of different use cases. I thought it would be fun to look over those use cases and discuss common design patterns in Redis.</p>",
@@ -9056,7 +9056,7 @@
   },
   {
     "id": "198471722",
-    "name": "Useful, Usable & Desirable: Designing for People w/ Jessica Ivins",
+    "name": "Useful, Usable & Desirable: Designing for People",
     "time": 1408636800000,
     "timezone": null,
     "description": "<p>\"It needs to be easy to use.\" We've heard this many times before from stakeholders, clients, and colleagues. But how do you go about making a website—or any product or service—easy to use? While there are plenty of industry leaders, books, articles, and best practices to learn from, what matters is context. For whom are you designing? What is this person's goals, motivations, and pain points? What is he or she trying to accomplish? Good design solves real problems. It doesn't just decorate. How can you design to solve real problems for real people?</p> <p>This session will explore the fundamentals of user experience. We'll explore industry best practices and examples of websites that solve real problems for real people. There are many tools and disciplines within user experience, from content strategy to information architecture to user research. By understanding these tools and when to use them, and by understanding the context of each design problem we are faced with, we can begin to understand how to utilize design thinking and creating user experiences that are useful, usable, and desirable.</p>",
@@ -9667,7 +9667,7 @@
   },
   {
     "id": "204512342",
-    "name": "Speed Matters: Profiling Server Side Code w/ Wil Wade",
+    "name": "Speed Matters: Profiling Server Side Code",
     "time": 1409846400000,
     "timezone": null,
     "description": null,
@@ -10013,7 +10013,7 @@
   },
   {
     "id": "204892312",
-    "name": "How not to be a Git w/ Adam Jimerson",
+    "name": "How not to be a Git",
     "time": 1410451200000,
     "timezone": null,
     "description": "<p>So you know the basics of Git, but there is so much more that just creating repositories, adding and committing changes, and pushing and pulling changes to remote repositories. Through this session I hope to teach you some tips and tricks as well as best practices to help you get the most of out Git and work better as a team.</p>",
@@ -10723,7 +10723,7 @@
   },
   {
     "id": "208808922",
-    "name": "Good Migrations: SQL performance w/ Rodger Maarfi",
+    "name": "Good Migrations: SQL performance",
     "time": 1411660800000,
     "timezone": null,
     "description": "<p>Indices, schemas, and how to access your data are all on the table.</p>",
@@ -11051,7 +11051,7 @@
   },
   {
     "id": "209526852",
-    "name": "Deathmatch2D: Evolutionary Algorithms for Creative Coding w/ Alex Cruikshank",
+    "name": "Deathmatch2D: Evolutionary Algorithms for Creative Coding",
     "time": 1412265600000,
     "timezone": null,
     "description": null,
@@ -11379,7 +11379,7 @@
   },
   {
     "id": "213574512",
-    "name": "Cluster Computing with Clojure and Mesos w/ Ben Weaver",
+    "name": "Cluster Computing with Clojure and Mesos",
     "time": 1413475200000,
     "timezone": null,
     "description": "<p>Mesos is an open source cluster manager modeled after Google’s Omega for building distributed systems. We’ll take a simple tour and see how to build a simple Clojure framework that can run Mesos tasks.</p>",
@@ -11635,7 +11635,7 @@
   },
   {
     "id": "214403232",
-    "name": "Cluster Computing with Clojure and Mesos part 2 w/ Ben Weaver",
+    "name": "Cluster Computing with Clojure and Mesos part 2",
     "time": 1414080000000,
     "timezone": null,
     "description": "<p>Mesos is an open source cluster manager modeled after Google’s Omega for building distributed systems. We’ll take a simple tour and see how to build a simple Clojure framework that can run Mesos tasks.</p>",
@@ -12201,7 +12201,7 @@
   },
   {
     "id": "217194572",
-    "name": "Docker part 1 w/ Micah Hausler",
+    "name": "Docker part 1",
     "time": 1415293200000,
     "timezone": null,
     "description": "<p>Micah has been using Docker for a while now and is going to give us all the run down.</p>",
@@ -12682,7 +12682,7 @@
   },
   {
     "id": "217195062",
-    "name": "Docker Part 2 w/ Micah Hausler",
+    "name": "Docker Part 2",
     "time": 1415898000000,
     "timezone": null,
     "description": "<p>More Docker!!!</p>",
@@ -12965,7 +12965,7 @@
   },
   {
     "id": "216703892",
-    "name": "Getting Sass-y w/ Jordan Isip",
+    "name": "Getting Sass-y",
     "time": 1416502800000,
     "timezone": null,
     "description": "<p>How to take advantage of Sass/Less CSS pre-processors to stay sane while building out designs.  </p> <p>How to get started, some best practices, and common mistakes. Further reading - Sass: <a href=\"http://t.co/zRFVlODBxu\"><a href=\"http://sass-lang.com\" class=\"linkified\">http://sass-lang.com</a> </a>. Less: <a href=\"http://t.co/hr0BZvV4qX\"><a href=\"http://lesscss.org/\" class=\"linkified\">http://lesscss.org/</a> </a></p>",
@@ -13419,7 +13419,7 @@
   },
   {
     "id": "213142882",
-    "name": "Falling in Love with Forms w/ Aaron Gustafson",
+    "name": "Falling in Love with Forms",
     "time": 1417712400000,
     "timezone": null,
     "description": "<p>In this session, we will explore forms from top to bottom, examining how they work and how their components can be incorporated with other elements to maximize accessibility, improve semantics, and allow for more flexible styling. You’ll get to see the complete picture with forms, including:</p> <p><br/>* new HTML5 field types;</p> <p>* validation, error messages &amp; formatting hints;</p> <p>* how to mark up and style forms for the greatest flexibility in responsive designs; and</p> <p>* best practices for enhancing forms with JavaScript.</p>",
@@ -14008,7 +14008,7 @@
   },
   {
     "id": "217332082",
-    "name": "So long, jQuery, and thanks for all the fish! w/ Matt Turnure",
+    "name": "So long, jQuery, and thanks for all the fish!",
     "time": 1418317200000,
     "timezone": null,
     "description": "<p>If you can't make this event, catch it streaming here: <a href=\"https://plus.google.com/b/103401260409601780643/events/cr4c6cb96aartv677su6mb6jkn8\" class=\"linkified\">https://plus.google.com/b/103401260409601780643/events/cr4c6cb96aartv677su6mb6jkn8</a></p>",
@@ -14552,7 +14552,7 @@
   },
   {
     "id": "219078676",
-    "name": "Telling local stories with data viz and d3.js w/ Mary Helen Miller",
+    "name": "Telling local stories with data viz and d3.js",
     "time": 1418922000000,
     "timezone": null,
     "description": "<p>D3.js is a javascript library, created by a developer at the New York Times. It’s a powerful tool for manipulating the document object model and creating beautiful data visualizations, in journalism and beyond.</p> <p>Come learn about how D3 can be used. I’ll show you a range of projects that use D3, including a few projects that I’ve created for the Chattanooga Times Free Press. We’ll talk about how data visualizations can help us ask better questions and tell better stories about our community.</p> <p>Remember if you can't make it this  week, you can catch it on YouTube here: <a href=\"http://www.youtube.com/watch?v=mk0XwRqpitU\" class=\"embedded\">http://www.youtube.com/watch?v=mk0XwRqpitU</a></p>",
