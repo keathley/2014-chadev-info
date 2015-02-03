@@ -1,0 +1,44 @@
+[
+  {
+    "key": 0,
+    "class": "frontend",
+    "name": "Frontend",
+    "description": "Javascript, Design, and front end tech"
+  },
+  {
+    "key": 1,
+    "class": "backend",
+    "name": "Backend",
+    "description": "Anything related to server development"
+  },
+  {
+    "key": 2,
+    "class": "devops",
+    "name": "Devops",
+    "description": "Stuff about Infrastructure"
+  },
+  {
+    "key": 3,
+    "class": "theory",
+    "name": "Theory",
+    "description": "How code works"
+  },
+  {
+    "key": 4,
+    "class": "process",
+    "name": "Process",
+    "description": "Writing Better Code"
+  },
+  {
+    "key": 5,
+    "class": "tech",
+    "name": "Technology",
+    "description": "Niche tech"
+  },
+  {
+    "key": 6,
+    "class": "topical",
+    "name": "Topical",
+    "description": "Interesting discussions about interesting things"
+  }
+]

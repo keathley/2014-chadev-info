@@ -3,11 +3,13 @@
   <head>
     <title>Lunch 2014 Infographic</title>
     <script src="events.json"></script>
+    <script src="categories.json"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.js"></script>
     <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
     <style>
       body {
-        background: #19063A;
+        /*background: #19063A;*/
+        background: #181818;
         font-family: 'Lucida Grande';
         margin: 0;
         padding: 0;
@@ -36,6 +38,73 @@
       .chart.locked rect {
         transition: fill .1s;
         fill: #172457;
+      }
+
+      .chart .frontend rect,
+      .legend rect.frontend {
+        fill: #BA8BAF;
+      }
+
+      .chart .frontend.highlight rect {
+        fill: #FFEBFA;
+      }
+
+      .chart .backend rect,
+      .legend rect.backend {
+        fill: #7CAFC2;
+      }
+
+      .chart .backend.highlight rect {
+        fill: #C4EFFF;
+      }
+
+      .chart .devops rect,
+      .legend rect.devops {
+        fill: #585858;
+      }
+
+      .chart .devops.highlight rect {
+        fill: #CAC9C9;
+      }
+
+      .chart .process rect,
+      .legend rect.process
+      {
+        fill: #A16946;
+      }
+
+      .chart .process.highlight rect {
+        fill: #F0AE84;
+      }
+
+      .chart .tech rect,
+      .legend rect.tech
+      {
+        fill: #A1B56C;
+      }
+
+      .chart .tech.highlight rect {
+        fill: #D4EF8C;
+      }
+
+      .chart .theory rect,
+      .legend rect.theory
+      {
+        fill: #DC9656;
+      }
+
+      .chart .theory.highlight rect {
+        fill: #FFE5CE;
+      }
+
+      .chart .topical rect,
+      .legend rect.topical
+      {
+        fill: #AB4642;
+      }
+
+      .chart .topical.highlight rect {
+        fill: #FFA8A4;
       }
 
       .chart .highlight rect {
@@ -104,6 +173,10 @@
         top: 100%;
         left: 0;
       }
+
+      .legend text {
+        text-anchor: start;
+      }
     </style>
   </head>
   <body>
@@ -126,10 +199,17 @@
             chartHeight = 500,
             isHighlightLocked = false;
 
-        d3.json("events.json", function(error, json) {
+        d3.json("events.json", function(error, events) {
           if (error) return console.warn(error);
-          var events = json;
 
+          d3.json("categories.json", function(catsError, cats) {
+            if (catsError) return console.warn(catsError);
+
+            render(events, cats);
+          });
+        });
+
+        function render(events, cats) {
           var chart = d3.select(".chart")
               .attr('width', width + margin.left + margin.right)
               .attr('height', height + margin.top + margin.bottom)
@@ -159,7 +239,9 @@
           var columns = chart.selectAll('.meetup')
               .data(events)
             .enter().append('g')
-              .attr('class', 'g')
+              .attr('class', function(d) {
+                return 'g ' + cats[d.category].class;
+              })
               .attr('transform', function(d) {
                 return "translate(" + xScale(d.name) + "," + (-barHeight) + ")";
               });
@@ -202,6 +284,27 @@
               document.querySelector('.chart').classList.toggle('locked');
             });
 
+          var legendTabs = [0, 120, 220, 340, 460, 580, 700];
+          var legend = chart.selectAll('.legend')
+              .data(cats)
+            .enter().append('g')
+              .attr('class', 'legend')
+              .attr('transform', function(d, i) {
+                return "translate(" + legendTabs[i] + ", -20)";
+              });
+
+          legend.append('rect')
+            .attr('x', 0)
+            .attr("width", 18)
+            .attr('height', 18)
+            .attr('class', function(d) { return d.class; });
+
+          legend.append('text')
+            .attr('x', 22)
+            .attr('y', 9)
+            .attr('dy', '.35em')
+            .text(function(d) { return d.name; });
+
           var tip = d3.tip()
             .attr('class', 'data-tip')
             .offset([-10, 0])
@@ -211,7 +314,7 @@
             });
 
           chart.call(tip);
-        });
+        }
 
         function selector(member) {
           return '[data-key=' + member.key + ']';

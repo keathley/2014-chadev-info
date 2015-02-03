@@ -4,6 +4,7 @@
     "name": "Test Driven Development in Django",
     "time": 1385053200000,
     "timezone": null,
+    "category": 4,
     "description": "<p>Adam Haney will be discussing approaches for test driven development in Django. This includes techniques for testing models, forms, form wizards, views and templates. We'll also discuss Python's Mock library and how mocking and stubbing can be used to isolate test cases.</p>",
     "venue": {
       "id": 2832721,
@@ -80,6 +81,7 @@
     "name": "Using knowledge systems to automatically address system problems",
     "time": 1386262800000,
     "timezone": null,
+    "category": 1,
     "description": "<p>Josh Marlow has been working on 'Django Narrative' a system that has the ability to identify issues as they arise and help developers and support staff to diagnose problems that are data or system related.</p>",
     "venue": {
       "id": 2832721,
@@ -201,6 +203,7 @@
     "name": "Developing applications in a Vagrant environment",
     "time": 1386867600000,
     "timezone": null,
+    "category": 2,
     "description": "<p>Micah Hausler will be explaining how to use Vagrant for local development that mimics a production environment&lt;/p&gt;</p>",
     "venue": {
       "id": 2832721,
@@ -313,6 +316,7 @@
     "name": "Thinking in Objects",
     "time": 1387472400000,
     "timezone": null,
+    "category": 3,
     "description": "<p>Anthony Blardo will be going over his philosophy for creating good object oriented code. Instead of simply covering basic OO concepts this talk discusses a state of mind for development.</p>",
     "venue": {
       "id": 2832721,
@@ -407,6 +411,7 @@
     "name": "An overview of Angular.js",
     "time": 1389286800000,
     "timezone": null,
+    "category": 0,
     "description": "<p>Roger Maarfi will be presenting an introduction to the Angular.js framework.</p>",
     "venue": {
       "id": 2832721,
@@ -609,6 +614,7 @@
     "name": "EMCAScript 6 and the future of Javascript",
     "time": 1389891600000,
     "timezone": null,
+    "category": 0,
     "description": null,
     "venue": {
       "id": 2832721,
@@ -838,6 +844,7 @@
     "name": "Human First Web Design",
     "time": 1390496400000,
     "timezone": null,
+    "category": 0,
     "description": null,
     "venue": {
       "id": 1024145,
@@ -1103,6 +1110,7 @@
     "name": "Using IPython Notebook to analyze Django model Data",
     "time": 1391101200000,
     "timezone": null,
+    "category": 1,
     "description": null,
     "venue": {
       "id": 18106162,
@@ -1314,6 +1322,7 @@
     "name": "An introduction to grails",
     "time": 1391706000000,
     "timezone": null,
+    "category": 1,
     "description": null,
     "venue": {
       "id": 2832721,
@@ -1606,6 +1615,7 @@
     "name": "Unity 3D",
     "time": 1392915600000,
     "timezone": null,
+    "category": 5,
     "description": null,
     "venue": {
       "id": 18106162,
@@ -1907,6 +1917,7 @@
     "name": "An Introduction to Cryptography for Programmers",
     "time": 1393520400000,
     "timezone": null,
+    "category": 3,
     "description": null,
     "venue": {
       "id": 18106162,
@@ -2172,6 +2183,7 @@
     "name": "Refactoring legacy code bases for fun and profit",
     "time": 1394125200000,
     "timezone": null,
+    "category": 4,
     "description": null,
     "venue": {
       "id": 18106162,
@@ -2428,6 +2440,7 @@
     "name": "Intro to Augmented Reality using the Metaio SDK",
     "time": 1394726400000,
     "timezone": null,
+    "category": 5,
     "description": null,
     "venue": {
       "id": 18106162,
@@ -2621,6 +2634,7 @@
     "name": "Handling Time Zones and Recurrences like a Boss in Python/Django",
     "time": 1395936000000,
     "timezone": null,
+    "category": 1,
     "description": "<p>Doing datetime manipulation in Python can be a very tedious task, especially across different time zones and daylight savings time boundaries. This talk summarizes a new open-source library called \"Fleming\" that aids in doing datetime manipulation across timezones. It also talks about \"Django Localized Recurrence\", another new open-source library for scheduling recurrences of events based on a time zone. The talk also gives a basic introduction to pytz in Python and some of the ways that Django handles time zones.</p>",
     "venue": {
       "id": 18106162,
@@ -2886,6 +2900,7 @@
     "name": "How economics effects developers",
     "time": 1396540800000,
     "timezone": null,
+    "category": 3,
     "description": null,
     "venue": {
       "id": 18106162,
@@ -3205,6 +3220,7 @@
     "name": "An Introduction to Adaptive Design",
     "time": 1397145600000,
     "timezone": null,
+    "category": 0,
     "description": "<p>For years, designers and developers have griped about the difficulties they encountered in supporting the numerous desktop browsers out there, but mobile is even more fragmented. Phones, tablets, media players, video game systems—each device (and in some cases each browser on each device) has its own dimensions, quirks and capabilities. It can make your brain hurt just thinking about it.</p> <p>Thankfully, going mobile doesn’t have to be a painful experience. In this session, Aaron Gustafson will introduce you to the concept of progressive enhancement and demonstrate why it is the way forward for web design, especially on mobile devices. In the course of his talk, he’ll walk you through progressive enhancement’s layered approach and show you how the latest techniques—mobile first, responsive design, and adaptive UI—fit in to the process.</p>",
     "venue": {
       "id": 18106162,
@@ -3614,6 +3630,7 @@
     "name": "Continuous Integration and Deployment @Bellhops",
     "time": 1397750400000,
     "timezone": null,
+    "category": 4,
     "description": "<p>Several developers have asked about tools and process for bringing continuous integration into their organization. I'd love to give an overview of how Bellhops does continuous integration and deployment and also highlight tools that are available.</p>",
     "venue": {
       "id": 18106162,
@@ -3942,6 +3959,7 @@
     "name": "Writing fast unit tests",
     "time": 1398355200000,
     "timezone": null,
+    "category": 4,
     "description": null,
     "venue": {
       "id": 18106162,
@@ -4234,6 +4252,7 @@
     "name": "Concurrency in Go",
     "time": 1398960000000,
     "timezone": null,
+    "category": 5,
     "description": null,
     "venue": {
       "id": 18106162,
@@ -4508,6 +4527,7 @@
     "name": "Olfactory Refactoring part 1",
     "time": 1399564800000,
     "timezone": null,
+    "category": 4,
     "description": null,
     "venue": {
       "id": 18106162,
@@ -4746,6 +4766,7 @@
     "name": "Olfactory Refactoring part 2",
     "time": 1400169600000,
     "timezone": null,
+    "category": 4,
     "description": null,
     "venue": {
       "id": 18106162,
@@ -5020,6 +5041,7 @@
     "name": "An Introduction to Angular.js",
     "time": 1400774400000,
     "timezone": null,
+    "category": 0,
     "description": null,
     "venue": {
       "id": 18106162,
@@ -5258,6 +5280,7 @@
     "name": ".NET trolling - why Microsoft is worth looking at",
     "time": 1401379200000,
     "timezone": null,
+    "category": 5,
     "description": "<p>We're looking to fill the hour with 5-10 minute talks about a subject you're interested in. Are you learning a new language, library, framework or technique? Tell us about it!</p>",
     "venue": {
       "id": -1,
@@ -5479,6 +5502,7 @@
     "time": 1401984000000,
     "timezone": null,
     "description": null,
+    "category": 5,
     "venue": {
       "id": 18106162,
       "name": "Society of Work"
@@ -5761,6 +5785,7 @@
     "name": "UTC Computer Science and Engineering Department Q&A",
     "time": 1402588800000,
     "timezone": null,
+    "category": 6,
     "description": "<p>Dr. Joseph Kizza is going to talk to us about the UTC CS department. This is a great chance for us to give him feedback on their program-- what we wished we had learned in college, what we think Chattanooga needs right now, compliments, complaints, etc. Come give some constructive feedback, and help build UTC's program into the Dev Wizard Factory that Chattanooga needs!</p>",
     "venue": {
       "id": 18106162,
@@ -6071,6 +6096,7 @@
     "name": "Net Neutrality with Chris Riley, Mozilla's Senior Policy Engineer",
     "time": 1403193600000,
     "timezone": null,
+    "category": 6,
     "description": "<p>Chris Riley from Mozilla is going to tell us about the issue of Net Neutrality- what it is, how it's being threatened, and what can be done. This talk is not limited to devs! Bring anyone who may have an interest in the subject. Chris will be joining us via videochat.</p>",
     "venue": {
       "id": 18106162,
@@ -6499,6 +6525,7 @@
     "time": 1403798400000,
     "timezone": null,
     "description": null,
+    "category": 6,
     "venue": {
       "id": 18106162,
       "name": "Society of Work"
@@ -6782,6 +6809,7 @@
     "time": 1404403200000,
     "timezone": null,
     "description": null,
+    "category": 0,
     "venue": {
       "id": 18106162,
       "name": "Society of Work"
@@ -7191,6 +7219,7 @@
     "time": 1405008000000,
     "timezone": null,
     "description": "<p>The City of Chattanooga recently proposed an open data initiative. I will explain open data and how you can participate in the open data movement.</p>",
+    "category": 6,
     "venue": {
       "id": 18106162,
       "name": "Society of Work"
@@ -7608,6 +7637,7 @@
     "name": "An introduction to static analysis",
     "time": 1405612800000,
     "timezone": null,
+    "category": 3,
     "description": null,
     "venue": {
       "id": 18106162,
@@ -7946,6 +7976,7 @@
     "time": 1406217600000,
     "timezone": null,
     "description": null,
+    "category": 5,
     "venue": {
       "id": 18106162,
       "name": "Society of Work"
@@ -8247,6 +8278,7 @@
     "time": 1406822400000,
     "timezone": null,
     "description": null,
+    "category": 2,
     "venue": {
       "id": 18106162,
       "name": "Society of Work"
@@ -8565,6 +8597,7 @@
     "name": "From Queues to Caches: Redis Design patterns",
     "time": 1407427200000,
     "timezone": null,
+    "category": 5,
     "description": "<p>Redis is a key value store that I've used in a lot of different use cases. I thought it would be fun to look over those use cases and discuss common design patterns in Redis.</p>",
     "venue": {
       "id": 18106162,
@@ -8857,6 +8890,7 @@
     "name": "OpenStreetMap 101",
     "time": 1408032000000,
     "timezone": null,
+    "category": 5,
     "description": "<p>What's OpenStreetMap? How is it useful? What can I do with it? Come learn about all of these things!</p>",
     "venue": {
       "id": 18106162,
@@ -9059,6 +9093,7 @@
     "name": "Useful, Usable & Desirable: Designing for People",
     "time": 1408636800000,
     "timezone": null,
+    "category": 0,
     "description": "<p>\"It needs to be easy to use.\" We've heard this many times before from stakeholders, clients, and colleagues. But how do you go about making a website—or any product or service—easy to use? While there are plenty of industry leaders, books, articles, and best practices to learn from, what matters is context. For whom are you designing? What is this person's goals, motivations, and pain points? What is he or she trying to accomplish? Good design solves real problems. It doesn't just decorate. How can you design to solve real problems for real people?</p> <p>This session will explore the fundamentals of user experience. We'll explore industry best practices and examples of websites that solve real problems for real people. There are many tools and disciplines within user experience, from content strategy to information architecture to user research. By understanding these tools and when to use them, and by understanding the context of each design problem we are faced with, we can begin to understand how to utilize design thinking and creating user experiences that are useful, usable, and desirable.</p>",
     "venue": {
       "id": 18106162,
@@ -9468,6 +9503,7 @@
     "name": "Like webscale but over 9000: Introduction to elixir and erlang",
     "time": 1409241600000,
     "timezone": null,
+    "category": 5,
     "description": "<p>Erlang has been behind some of the most reliable systems ever built.  Elixir is a new language that seeks to combine that same performance with the power of a dynamic language.  In this talk we'll go over the basics of Elixir, functional concepts, and demonstrate how easy it is to build large scale, reliable systems on the Erlang VM.</p>",
     "venue": {
       "id": 18106162,
@@ -9671,6 +9707,7 @@
     "time": 1409846400000,
     "timezone": null,
     "description": null,
+    "category": 1,
     "venue": {
       "id": 18106162,
       "name": "Society of Work"
@@ -10016,6 +10053,7 @@
     "name": "How not to be a Git",
     "time": 1410451200000,
     "timezone": null,
+    "category": 4,
     "description": "<p>So you know the basics of Git, but there is so much more that just creating repositories, adding and committing changes, and pushing and pulling changes to remote repositories. Through this session I hope to teach you some tips and tricks as well as best practices to help you get the most of out Git and work better as a team.</p>",
     "venue": {
       "id": 18106162,
@@ -10497,6 +10535,7 @@
     "name": "Lightning Talks!",
     "time": 1411056000000,
     "timezone": null,
+    "category": 6,
     "description": "<p>Playing with something new?  Just solved an interesting problem?  Have some unsolved question?  You should give a lightning talk!  You'll have 5 minutes to talk about something that you think is interesting.</p>",
     "venue": {
       "id": 18106162,
@@ -10726,6 +10765,7 @@
     "name": "Good Migrations: SQL performance",
     "time": 1411660800000,
     "timezone": null,
+    "category": 1,
     "description": "<p>Indices, schemas, and how to access your data are all on the table.</p>",
     "venue": {
       "id": 18106162,
@@ -11055,6 +11095,7 @@
     "time": 1412265600000,
     "timezone": null,
     "description": null,
+    "category": 3,
     "venue": {
       "id": 18106162,
       "name": "Society of Work"
@@ -11383,6 +11424,7 @@
     "time": 1413475200000,
     "timezone": null,
     "description": "<p>Mesos is an open source cluster manager modeled after Google’s Omega for building distributed systems. We’ll take a simple tour and see how to build a simple Clojure framework that can run Mesos tasks.</p>",
+    "category": 5,
     "venue": {
       "id": 18106162,
       "name": "Society of Work"
@@ -11639,6 +11681,7 @@
     "time": 1414080000000,
     "timezone": null,
     "description": "<p>Mesos is an open source cluster manager modeled after Google’s Omega for building distributed systems. We’ll take a simple tour and see how to build a simple Clojure framework that can run Mesos tasks.</p>",
+    "category": 5,
     "venue": {
       "id": 18106162,
       "name": "Society of Work"
@@ -11912,6 +11955,7 @@
     "name": "Lightning Talks!",
     "time": 1414684800000,
     "timezone": null,
+    "category": 6,
     "description": "<p>As is our custom we want to give people a chance to speak on a topic that they are just learning about, a problem they recently had to solve, or anything else you think is interesting. If you haven't spoken before then this is a great way to test topics or to research something you want to know more about.</p>",
     "venue": {
       "id": 18106162,
@@ -12204,6 +12248,7 @@
     "name": "Docker part 1",
     "time": 1415293200000,
     "timezone": null,
+    "category": 2,
     "description": "<p>Micah has been using Docker for a while now and is going to give us all the run down.</p>",
     "venue": {
       "id": 18106162,
@@ -12685,6 +12730,7 @@
     "name": "Docker Part 2",
     "time": 1415898000000,
     "timezone": null,
+    "category": 2,
     "description": "<p>More Docker!!!</p>",
     "venue": {
       "id": 18106162,
@@ -12968,6 +13014,7 @@
     "name": "Getting Sass-y",
     "time": 1416502800000,
     "timezone": null,
+    "category": 0,
     "description": "<p>How to take advantage of Sass/Less CSS pre-processors to stay sane while building out designs.  </p> <p>How to get started, some best practices, and common mistakes. Further reading - Sass: <a href=\"http://t.co/zRFVlODBxu\"><a href=\"http://sass-lang.com\" class=\"linkified\">http://sass-lang.com</a> </a>. Less: <a href=\"http://t.co/hr0BZvV4qX\"><a href=\"http://lesscss.org/\" class=\"linkified\">http://lesscss.org/</a> </a></p>",
     "venue": {
       "id": 18106162,
@@ -13422,6 +13469,7 @@
     "name": "Falling in Love with Forms",
     "time": 1417712400000,
     "timezone": null,
+    "category": 0,
     "description": "<p>In this session, we will explore forms from top to bottom, examining how they work and how their components can be incorporated with other elements to maximize accessibility, improve semantics, and allow for more flexible styling. You’ll get to see the complete picture with forms, including:</p> <p><br/>* new HTML5 field types;</p> <p>* validation, error messages &amp; formatting hints;</p> <p>* how to mark up and style forms for the greatest flexibility in responsive designs; and</p> <p>* best practices for enhancing forms with JavaScript.</p>",
     "venue": {
       "id": 18106162,
@@ -14011,6 +14059,7 @@
     "name": "So long, jQuery, and thanks for all the fish!",
     "time": 1418317200000,
     "timezone": null,
+    "category": 0,
     "description": "<p>If you can't make this event, catch it streaming here: <a href=\"https://plus.google.com/b/103401260409601780643/events/cr4c6cb96aartv677su6mb6jkn8\" class=\"linkified\">https://plus.google.com/b/103401260409601780643/events/cr4c6cb96aartv677su6mb6jkn8</a></p>",
     "venue": {
       "id": 18106162,
@@ -14555,6 +14604,7 @@
     "name": "Telling local stories with data viz and d3.js",
     "time": 1418922000000,
     "timezone": null,
+    "category": 0,
     "description": "<p>D3.js is a javascript library, created by a developer at the New York Times. It’s a powerful tool for manipulating the document object model and creating beautiful data visualizations, in journalism and beyond.</p> <p>Come learn about how D3 can be used. I’ll show you a range of projects that use D3, including a few projects that I’ve created for the Chattanooga Times Free Press. We’ll talk about how data visualizations can help us ask better questions and tell better stories about our community.</p> <p>Remember if you can't make it this  week, you can catch it on YouTube here: <a href=\"http://www.youtube.com/watch?v=mk0XwRqpitU\" class=\"embedded\">http://www.youtube.com/watch?v=mk0XwRqpitU</a></p>",
     "venue": {
       "id": 18106162,
