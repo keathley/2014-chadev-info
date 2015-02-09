@@ -274,7 +274,7 @@
               if (isHighlightLocked) return;
 
               var cells = document.querySelectorAll(selector(d));
-              [].forEach.call(cells, function(cell) {
+              Array.prototype.forEach.call(cells, function(cell) {
                 cell.parentNode.classList.add('highlight');
               });
             })
@@ -283,7 +283,7 @@
               if (isHighlightLocked) return;
 
               var highlights = document.querySelectorAll('.highlight');
-              [].forEach.call(highlights, function(column) {
+              Array.prototype.forEach.call(highlights, function(column) {
                 column.classList.remove('highlight');
               });
             })
