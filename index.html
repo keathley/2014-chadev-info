@@ -198,13 +198,11 @@
     <script>
       (function() {
         var margin      = { top: 0, right: 20, bottom: 30, left: 100 },
-            width       = 1400,
-            height      = 1200,
+            width       = 800,
+            height      = 600,
             barHeight   = 8,
             barWidth    = 10,
             spacer      =  1,
-            chartWidth  = 1000,
-            chartHeight = 500,
             isHighlightLocked = false;
 
         d3.json("events.json", function(error, events) {
@@ -218,6 +216,8 @@
         });
 
         function render(events, cats) {
+          barWidth = width / events.length;
+
           var chart = d3.select(".chart")
               .attr('width', width + margin.left + margin.right)
               .attr('height', height + margin.top + margin.bottom)
@@ -226,11 +226,11 @@
 
           var xScale = d3.scale.ordinal()
             .domain(events.map(function(d) { return d.name; }))
-            .rangeRoundBands([0, chartWidth], 0.1);
+            .rangeRoundBands([0, width], 0.1);
 
           var yScale = d3.scale.linear()
             .domain([0, d3.max(events, function(d) { return d.rsvps.length; })])
-            .range([chartHeight, 0]);
+            .range([height, 0]);
 
           var xAxis = d3.svg.axis()
             .scale(xScale)
@@ -251,46 +251,13 @@
                 return 'g ' + cats[d.category].class;
               })
               .attr('transform', function(d) {
-                return "translate(" + xScale(d.name) + "," + (-barHeight) + ")";
+                return "translate(" + xScale(d.name) + ",0)";
               });
 
-          columns.append('text')
-            .attr('transform', 'translate(' + (barWidth) + ', ' + (chartHeight + 15) + ') rotate(-65)' )
-            .attr('class', 'x axis')
-            .attr('text-anchor', 'end')
-            .attr('dx', '-10px')
-            .attr('dy', '.15em')
-            .text(function(d) { return d.name; });
-
-          var rsvps = columns.selectAll('rect')
-              .data(function(d) { return d.rsvps; })
-            .enter().append('rect')
-              .attr('data-key', function(d) { return d.key; })
-              .attr('width', xScale.rangeBand())
-              .attr('y', function(d, i) { return yScale(i); })
-              .attr('height', barHeight - spacer)
-            .on('mouseover', function(d) {
-              tip.show(d);
-              if (isHighlightLocked) return;
-
-              var cells = document.querySelectorAll(selector(d));
-              Array.prototype.forEach.call(cells, function(cell) {
-                cell.parentNode.classList.add('highlight');
-              });
-            })
-            .on('mouseout', function(d) {
-              tip.hide(d);
-              if (isHighlightLocked) return;
-
-              var highlights = document.querySelectorAll('.highlight');
-              Array.prototype.forEach.call(highlights, function(column) {
-                column.classList.remove('highlight');
-              });
-            })
-            .on('click', function(d) {
-              isHighlightLocked = !isHighlightLocked;
-              document.querySelector('.chart').classList.toggle('locked');
-            });
+          columns.append('rect')
+            .attr('y', function(d) { return yScale(d.rsvps.length) })
+            .attr('height', function(d) { return height - yScale(d.rsvps.length) })
+            .attr('width', barWidth - 1)
 
           var legendTabs = [0, 120, 220, 340, 460, 580, 700];
           var legend = chart.selectAll('.legend')
@@ -298,7 +265,7 @@
             .enter().append('g')
               .attr('class', 'legend')
               .attr('transform', function(d, i) {
-                return "translate(" + legendTabs[i] + ", -20)";
+                return "translate(" + legendTabs[i] + ",10)";
               });
 
           legend.append('rect')
@@ -312,16 +279,6 @@
             .attr('y', 9)
             .attr('dy', '.35em')
             .text(function(d) { return d.name; });
-
-          var tip = d3.tip()
-            .attr('class', 'data-tip')
-            .offset([-10, 0])
-            .html(function(d) {
-              var tag = "<span>" + d.name + "</span>";
-              return tag;
-            });
-
-          chart.call(tip);
         }
 
         function selector(member) {
