@@ -2,32 +2,31 @@
 <html>
   <head>
     <title>Lunch 2014 Infographic</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
     <script src="events.json"></script>
     <script src="categories.json"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.js"></script>
     <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
     <style>
       body {
-        /*background: #19063A;*/
         background: #181818;
-        font-family: 'Lucida Grande';
-        margin: 0;
-        padding: 0;
+        font-family: 'Open Sans', 'Lucida Grande', sans-serif;
+        margin: 1em auto 4em;
+        width: 960px;
       }
 
       header {
         color: white;
-        text-align: center;
-        padding: 200px 20px 110px;
+        text-align: left;
       }
 
       header h1 {
         font-weight: lighter;
         font-size: 60px;
+        margin: 0;
       }
 
       .chart {
-        padding: 20px;
       }
 
       .chart rect {
@@ -132,10 +131,10 @@
       }
 
       .chart-information {
-        display: flex;
+/*        display: flex;
         align-items: center;
         justify-content: center;
-      }
+*/      }
 
       .axis path,
       .axis line {
@@ -155,7 +154,7 @@
         font-weight: lighter;
         font-size: 12px;
         padding: 12px;
-        background: rgba(0, 0, 0, 0.8);
+        background: rgba(60, 60, 60, 0.95);
         color: #fff;
         border-radius: 2px;
       }
@@ -166,7 +165,7 @@
         font-size: 10px;
         width: 100%;
         line-height: 1;
-        color: rgba(0, 0, 0, 0.8);
+        color: rgba(60, 60, 60, 0.95);
         content: "\25BC";
         position: absolute;
         text-align: center;
@@ -197,9 +196,9 @@
     </section>
     <script>
       (function() {
-        var margin      = { top: 0, right: 20, bottom: 30, left: 100 },
-            width       = 800,
-            height      = 600,
+        var margin      = { top: 0, right: 20, bottom: 30, left: 40 },
+            width       = 960 - margin.right - margin.left,
+            height      = 520 - margin.top - margin.bottom,
             barHeight   = 8,
             barWidth    = 10,
             spacer      =  1,
@@ -240,6 +239,16 @@
             .scale(yScale)
             .orient('left');
 
+          var tip = d3.tip()
+            .attr('class', 'data-tip')
+            .offset([-10, 0])
+            .html(function(d) {
+              var tag = "<span>" + d.name + "</span>";
+              return tag;
+            });
+
+          chart.call(tip);
+
           chart.append('g')
             .attr('class', 'y axis')
             .call(yAxis);
@@ -258,14 +267,16 @@
             .attr('y', function(d) { return yScale(d.rsvps.length) })
             .attr('height', function(d) { return height - yScale(d.rsvps.length) })
             .attr('width', barWidth - 1)
+            .on('mouseover', tip.show)
+            .on('mouseout', tip.hide)
 
-          var legendTabs = [0, 120, 220, 340, 460, 580, 700];
+          var legendTabs = [15, 120, 220, 340, 460, 580, 700];
           var legend = chart.selectAll('.legend')
               .data(cats)
             .enter().append('g')
               .attr('class', 'legend')
               .attr('transform', function(d, i) {
-                return "translate(" + legendTabs[i] + ",10)";
+                return "translate(" + legendTabs[i] + ", 25)";
               });
 
           legend.append('rect')
@@ -279,6 +290,7 @@
             .attr('y', 9)
             .attr('dy', '.35em')
             .text(function(d) { return d.name; });
+
         }
 
         function selector(member) {
