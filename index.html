@@ -26,9 +26,6 @@
         margin: 0;
       }
 
-      .chart {
-      }
-
       .chart rect {
         fill: #7CAFC2;
         cursor: pointer;
@@ -43,11 +40,6 @@
       .legend rect.frontend
       {
         fill: #BA8BAF;
-
-      }
-
-      .chart .frontend.highlight rect {
-        fill: #FFEBFA;
       }
 
       .chart .backend rect,
@@ -56,18 +48,10 @@
         fill: #7CAFC2;
       }
 
-      .chart .backend.highlight rect {
-        fill: #C4EFFF;
-      }
-
       .chart .devops rect,
       .legend rect.devops
       {
         fill: #585858;
-      }
-
-      .chart .devops.highlight rect {
-        fill: #CAC9C9;
       }
 
       .chart .process rect,
@@ -76,18 +60,10 @@
         fill: #A16946;
       }
 
-      .chart .process.highlight rect {
-        fill: #F0AE84;
-      }
-
       .chart .tech rect,
       .legend rect.tech
       {
         fill: #A1B56C;
-      }
-
-      .chart .tech.highlight rect {
-        fill: #D4EF8C;
       }
 
       .chart .theory rect,
@@ -96,23 +72,10 @@
         fill: #DC9656;
       }
 
-      .chart .theory.highlight rect {
-        fill: #FFE5CE;
-      }
-
       .chart .topical rect,
       .legend rect.topical
       {
         fill: #AB4642;
-      }
-
-      .chart .topical.highlight rect {
-        fill: #FFA8A4;
-      }
-
-      .chart .highlight rect {
-        transition: fill .1s;
-        fill: #F7CA88;
       }
 
       .chart text {
@@ -120,21 +83,6 @@
         font: 10px sans-serif;
         text-anchor: end;
       }
-
-      .chart.locked text.x.axis {
-        transition: .1s;
-        fill: #4F4F4F;
-      }
-
-      .chart .highlight text.x.axis {
-        fill: white;
-      }
-
-      .chart-information {
-/*        display: flex;
-        align-items: center;
-        justify-content: center;
-*/      }
 
       .axis path,
       .axis line {
