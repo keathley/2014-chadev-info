@@ -7,6 +7,7 @@
     <script src="categories.json"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.js"></script>
     <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.5.0/lodash.min.js"></script>
     <style>
       body {
         background: #181818;
@@ -140,122 +141,27 @@
       <h1>Chadev+Lunch 2014</h1>
     </header>
     <section class="chart-information">
-      <svg class="chart">
+      <svg id="bar-chart" class="chart">
       </svg>
+    </section>
+    <section class="chart-information">
+      <svg id="histogram" class="chart"></svg>
     </section>
     <script>
       (function() {
-        var margin      = { top: 0, right: 20, bottom: 30, left: 40 },
-            width       = 960 - margin.right - margin.left,
-            height      = 520 - margin.top - margin.bottom,
-            barHeight   = 8,
-            barWidth    = 10,
-            spacer      =  1,
-            isHighlightLocked = false;
-
         d3.json("events.json", function(error, events) {
           if (error) return console.warn(error);
 
           d3.json("categories.json", function(catsError, cats) {
             if (catsError) return console.warn(catsError);
 
-            render(events, cats);
+            BarChart.render(events, cats);
+            Histogram.render(events, cats)
           });
         });
-
-        function render(events, cats) {
-          barWidth = width / events.length;
-
-          var chart = d3.select(".chart")
-              .attr('width', width + margin.left + margin.right)
-              .attr('height', height + margin.top + margin.bottom)
-            .append('g')
-              .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
-
-          var xScale = d3.scale.ordinal()
-            .domain(events.map(function(d) { return d.name; }))
-            .rangeRoundBands([0, width], 0.1);
-
-          var yScale = d3.scale.linear()
-            .domain([0, d3.max(events, function(d) { return d.rsvps.length; })])
-            .range([height, 0]);
-
-          var xAxis = d3.svg.axis()
-            .scale(xScale)
-            .orient('bottom');
-
-          var yAxis = d3.svg.axis()
-            .scale(yScale)
-            .orient('left');
-
-          var tip = d3.tip()
-            .attr('class', 'data-tip')
-            .offset([-10, 0])
-            .html(function(d) {
-              var tag = "<span>" + d.name + "</span>";
-              return tag;
-            });
-
-          chart.call(tip);
-
-          chart.append('g')
-            .attr('class', 'y axis')
-            .call(yAxis);
-
-          var columns = chart.selectAll('.meetup')
-              .data(events)
-            .enter().append('g')
-              .attr('class', function(d) {
-                return 'g ' + cats[d.category].class;
-              })
-              .attr('transform', function(d) {
-                return "translate(" + xScale(d.name) + ",0)";
-              });
-
-          columns.append('rect')
-            .attr('y', function(d) { return yScale(d.rsvps.length) })
-            .attr('height', function(d) { return height - yScale(d.rsvps.length) })
-            .attr('width', barWidth - 1)
-            .on('mouseover', tip.show)
-            .on('mouseout', tip.hide)
-
-          var legendTabs = [15, 120, 220, 340, 460, 580, 700];
-          var legend = chart.selectAll('.legend')
-              .data(cats)
-            .enter().append('g')
-              .attr('class', 'legend')
-              .attr('transform', function(d, i) {
-                return "translate(" + legendTabs[i] + ", 25)";
-              });
-
-          legend.append('rect')
-            .attr('x', 0)
-            .attr("width", 18)
-            .attr('height', 18)
-            .attr('class', function(d) { return d.class; });
-
-          legend.append('text')
-            .attr('x', 22)
-            .attr('y', 9)
-            .attr('dy', '.35em')
-            .text(function(d) { return d.name; });
-
-        }
-
-        function selector(member) {
-          return '[data-key=' + member.key + ']';
-        }
-
-        function getChartWidth() {
-          var width = parseInt(d3.select('.chart').style('width'), 10);
-          return width - margin.left - margin.right;
-        }
-
-        function getChartHeight() {
-          var height = parseInt(d3.select('.chart').style('height'), 10);
-          return height - margin.top - margin.bottom;
-        }
       })();
     </script>
+    <script src="bar_chart.js"></script>
+    <script src="histogram.js"></script>
   </body>
 </html>
